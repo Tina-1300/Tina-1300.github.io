@@ -1,0 +1,212 @@
+<script>
+var ip="127.0.0.1";
+</script>
+<html>
+<head>
+  <title>Chat en ligne</title>
+
+  <meta name="author" content='Tina-13'>
+</head>
+<body>
+<form onsubmit="return false;" >
+<h1>chat en ligne</h1>
+<div id="etape1">
+  <h2>Choisissez d'abord votre pseudo</h2>
+  <div id="pseudo">Votre pseudo : <input type="text" name="pseudo" value="" maxlength="10"> <input type="submit" value="Choisir" onclick="choisirPseudo(this.form)"></div>
+</div>
+<div id="etape2">
+  <h2>Fenetre de conversation du Chat</h2>
+  <div id="chat">
+    <div id="messagerie"></div>
+    <div id="commandes">
+      <div id="message" >
+        <input type="text" name="message" value="" placeholder="Tapez ici votre message" style="width:90%">
+        <input type="submit" value="Envoyer" onclick="sendMessage(this.form)">
+      </div>
+    </div>
+  </div>
+</div>
+<h2>Console du Chat</h2>
+<div id="log"></div>
+</form>
+  <script>
+  var pseudo="";
+  var log=document.querySelector("div#log");
+  var messagerie=document.querySelector("div#messagerie")
+
+  
+  /* Etape 1 : Validation du choix du pseudo de l'utilisateur */
+  function choisirPseudo(f) {
+    if (f.pseudo.value!="") {
+      pseudo=f.pseudo.value;
+      socket.send(encodeMessage("", "PSEUDO="+f.pseudo.value)); /* Envoi du pseudo au serveur */
+      document.querySelector("div#pseudo").innerHTML="Votre pseudo est <strong>"+htmlentities(f.pseudo.value)+"</strong>";
+      document.querySelector("div#etape2").style.visibility="visible";
+    }
+  }
+
+  /* Etape 2 : Chat activer apres saisie du pseudo */
+  function sendMessage(f) {
+    if (f.message.value!="") {
+      socket.send(encodeMessage(pseudo, f.message.value)); /* Envoi du message au serveur */
+      f.message.value="";
+      f.message.focus();
+    }
+  }
+
+  /* Configuration de la connexion */
+  var socket=new WebSocket("ws://"+ip+":8080", "echo-protocol");
+  consoleLog("Creation de la connexion "+socket.url);
+  
+  /* D�clench� � la premi�re ouverture de la connexion ws:// */
+  socket.addEventListener("open", function (event) {
+    socket.send(encodeMessage("", "Hello Serveur")); /* Envoi d'un premier message au serveur */
+  });
+  
+  /* D�clench� quand le serveur coupe la connexion */
+  socket.addEventListener("close", function (event) {
+    var txt="Fermeture de la connexion";
+    consoleLog(txt);
+  });
+
+  /* D�clench� � la d�tection d'une erreur */
+  socket.addEventListener("error", function (error) {
+    var txt="Erreur detecter";
+    consoleLog(txt);
+  });
+  
+  /* D�clench� � la r�ception de tout message */
+  socket.addEventListener("message", function (event) {
+    if (pseudo=="") { /* Tant que pas de pseudo choisi, on ne fait rien */
+      return;
+    }
+    var string=event.data;
+    var msg=decodeMessage(string);
+    if (msg) {
+      var txt="Message ressu du serveur : "+ string;
+      consoleLog(txt);
+      if (msg.auteur!="") {
+	    if (msg.auteur=="Serveur") { // Message de notification issu du serveur
+	      messagerie.innerHTML+="<div><div class=\"notification\">"+htmlentities(msg.message)+"</div></div>";
+	    } else {
+          messagerie.innerHTML+="<div><div class=\"pseudo\">"+htmlentities(msg.auteur)+"</div><div class=\"message\">"+htmlentities(msg.message)+"</div></div>";
+	    }
+      }
+    } else {
+      consoleLog("Erreur de message");
+    }
+  });
+  
+  /* Formatage d'un message avant envoi */
+  function encodeMessage(auteur, texte) {
+    return JSON.stringify({auteur: auteur, message: texte});
+  }
+  /* D�codage d'un message re�u */
+  function decodeMessage(string) {
+    try {
+    var message=JSON.parse(string);
+    return message;
+    } catch (err) {
+    return null;
+    }
+  }  
+  /* Affiche une information dans la console et dans div#affichage */
+  function consoleLog(txt) {
+    var div=document.createElement("div");
+    div.innerText=txt;
+    log.appendChild(div);
+    console.log(txt);  
+  }
+  /* S�curise du texte avant de l'afficher */
+  function htmlentities(c) {
+    var e='';
+    if (c) {
+      for (var i=0; i<c.length; i++) {
+      e+='&#'+c.charCodeAt(i)+';';
+    }
+    }
+    return e;
+  };
+
+</script>
+<style type="text/css">
+  body {
+    font-family: arial;
+    min-height:800px;
+    background: #fff;
+  }
+  input {
+    font-size:13px;
+  }
+  h1, h2 {
+    margin:0px;
+    padding:0px;
+    margin-top:3px;
+    margin-bottom: 3px;
+  }
+  div#etape1 {
+    display:block;
+  }
+  div#etape2 {
+    visibility: hidden;
+  }
+  
+  div#messagerie {
+    border:1px solid #999;
+    background: #fff;
+    padding:5px;
+    min-height:40%;
+  }
+  
+  div#chat div.pseudo {
+    display: inline-block;
+    font-weight:bold;
+    margin-right:5px;
+    padding:1px;
+    border:1px solid #999;
+    border-radius: 3px;
+    background: #ccc;
+    
+  }
+  div#chat div.message {
+    display: inline-block;
+    font-weight:normal;
+  }
+  
+  div#chat div.notification {
+  	font-style: italic;
+  	color:#999;
+  }
+
+  div#messagerie div {
+    display: block;
+    margin-bottom:3px;    
+  }
+  
+  div#commandes {
+    background-color:#ccc;
+    width:100%;    
+  }
+  div#commandes div#message {
+    display: inline-block;
+    margin:4px;
+    width:90%;    
+  }
+  div#log {
+    background: #f6f6f6;
+    padding:5px;
+    box-shadow: 1px 1px 3px #666;
+    min-height:18%;
+  }
+  div#log div {
+    margin-bottom: 3px;
+    font-family: "courier new";
+    font-size:12px;
+  }
+  div#source {
+	  padding-top: 10px;
+	  
+  }
+</style>
+</body>
+</html>  
