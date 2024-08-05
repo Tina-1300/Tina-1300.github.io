@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 function playSound(){
-    const audio = new Audio('va.mp3');
+    const audio = new Audio('gg.mp3'); // va.mp3
     audio.loop = true;
     
     document.addEventListener('click', function(){
