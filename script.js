@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 function playSound(){
-    const audio = new Audio('gg.mp3'); // va.mp3
+    const audio = new Audio('Kyo - Dernière danse (Clip officiel).mp3'); // va.mp3 , gg.mp3 
     audio.loop = true;
     
     document.addEventListener('click', function(){
