@@ -1,5 +1,6 @@
 const targetDate = new Date('September 13, 2024 00:00:00').getTime();
 
+
 function countdown(){
     const now = new Date().getTime();
     const distance = targetDate - now;
@@ -14,10 +15,14 @@ function countdown(){
     document.getElementById('minutes').innerHTML = `<span>${minutes}</span>minutes`;
     document.getElementById('seconds').innerHTML = `<span>${seconds}</span>secondes`;
 
+
+
     if (distance < 0){
         clearInterval(countdownFunction);
         document.querySelector('.countdown').innerText = `Chargement De La Version 0.3 De la librairie Tina_TOOLS...
-        le site cera disponible a cette adresse : https://religious-electrode.000webhostapp.com/index.php`;
+        je n'est plus de server dynamique donc je vous met le lien de ma doc sur github vous pouvez y run en php avec vôtre server
+        local, et quand vous aurez le site en local, vous pouvez télécharger la librairie, à chaque version j'update ce repositori 
+        pour que la doc sois a jour et les lien de téléchargement aussi https://github.com/Tina-1300/docTinaTOOLS`;
     }
 }
 
@@ -50,6 +55,9 @@ function playSound(){
         audio.play();
     });
 }
+
+
+
 
 playSound();
 
