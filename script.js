@@ -19,10 +19,8 @@ function countdown(){
 
     if (distance < 0){
         clearInterval(countdownFunction);
-        document.querySelector('.countdown').innerText = `Chargement De La Version 0.3 De la librairie Tina_TOOLS...
-        je n'est plus de server dynamique donc je vous met le lien de ma doc sur github vous pouvez y run en php avec vôtre server
-        local, et quand vous aurez le site en local, vous pouvez télécharger la librairie, à chaque version j'update ce repositori 
-        pour que la doc sois a jour et les lien de téléchargement aussi https://github.com/Tina-1300/docTinaTOOLS`;
+        document.querySelector('.countdown').innerText = `Chargement De La Version 0.4 De la librairie Tina_TOOLS...
+        disponible sur  https://tina-1300.github.io/TinaTOOLS/index.html`;
     }
 }
 
