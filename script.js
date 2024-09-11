@@ -19,8 +19,8 @@ function countdown(){
 
     if (distance < 0){
         clearInterval(countdownFunction);
-        document.querySelector('.countdown').innerText = `Chargement De La Version 0.4 De la librairie Tina_TOOLS...
-        disponible sur  https://tina-1300.github.io/TinaTOOLS/index.html`;
+        document.querySelector('.countdown').innerText = `Chargement De La Version 0.5 De la librairie Tina_TOOLS...
+        disponible sur  https://tina-1300.github.io/TinaTOOLS/v0.5/index.html`;
     }
 }
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 function playSound(){
-    const audio = new Audio('h4.mp3'); // va.mp3 , gg.mp3 h4.mp3 = MeandtheDevil
+    const audio = new Audio('song/h4.mp3'); // h4.mp3 = MeandtheDevil
     audio.loop = true;
     
     document.addEventListener('click', function(){
