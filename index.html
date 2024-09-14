@@ -7,25 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="popup-overlay" id="popupOverlay"></div>
-    <div class="popup" id="popup">
-        <p>La vie d'un site web ressemble étrangement à la nôtre: elle commence par une idée pleine de promesses, se développe avec enthousiasme, rencontre des défis techniques et des pannes inattendues, et finit par s'éteindre dans l'oubli numérique, laissant derrière elle seulement des fragments de code et des souvenirs dans les archives de l'internet. signer Tina</p>
-        <br>
-        <p>The life of a website is eerily similar to our own: it begins with a promising idea, grows enthusiastically, encounters technical challenges and unexpected breakdowns, and eventually fades into digital oblivion, leaving behind it only fragments of code and memories in the archives of the internet. sign Tina</p>
-        <p>La version 0.5 du Framework Tina_TOOLS va sortir</p><!-- dire le lien de la doc comme ça quand je met le compteur pour la doc du 6 il ont toujour le lien pour allez a la doc du 5  -->
-        <button type="button" id="closePopup">Fermer</button>
-    </div>
-
 
     <div class="container">
         <div class="countdown">
-            <div id="days"></div>
-            <div id="hours"></div>
-            <div id="minutes"></div>
-            <div id="seconds"></div>
+            <div id="days"><span>00</span>jours</div>
+            <div id="hours"><span>00</span>heures</div>
+            <div id="minutes"><span>00</span>minutes</div>
+            <div id="seconds"><span>00</span>secondes</div>
+        </div>
+        <div class="message-final" id="messageFinal">
+            Chargement De La Version 0.5 De la librairie Tina_TOOLS...<br>
+            disponible sur <a href="https://tina-1300.github.io/TinaTOOLS/v0.5/index.html">ce lien</a>.
         </div>
     </div>
-    <canvas id="confettiCanvas"></canvas>
+
     <script src="script.js"></script>
 </body>
 </html>

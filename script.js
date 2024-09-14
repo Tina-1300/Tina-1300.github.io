@@ -1,7 +1,6 @@
 const targetDate = new Date('September 13, 2024 00:00:00').getTime();
 
-
-function countdown(){
+function countdown() {
     const now = new Date().getTime();
     const distance = targetDate - now;
 
@@ -15,16 +14,14 @@ function countdown(){
     document.getElementById('minutes').innerHTML = `<span>${minutes}</span>minutes`;
     document.getElementById('seconds').innerHTML = `<span>${seconds}</span>secondes`;
 
-
-    if (distance < 0){
-        clearInterval(countdown);
-        document.querySelector('.countdown').innerText = `Chargement De La Version 0.5 De la librairie Tina_TOOLS...
-        disponible sur  https://tina-1300.github.io/TinaTOOLS/v0.5/index.html`;
+    if (distance < 0) {
+        clearInterval(interval);
+        document.querySelector('.countdown').style.display = 'none';
+        document.getElementById('messageFinal').style.display = 'block';
     }
 }
 
-
-setInterval(countdown, 1000);
+const interval = setInterval(countdown, 1000);
 
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -57,66 +54,6 @@ function playSound(){
 
 
 playSound();
-
-
-
-const canvas = document.getElementById('confettiCanvas');
-        const ctx = canvas.getContext('2d');
-        const confettiArray = [];
-        const emojis = ['❤️', '🔥', '😍', '💜'];
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        class Confetti{
-            constructor(){
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height - canvas.height;
-                this.size = Math.random() * 30 + 20;
-                this.emoji = emojis[Math.floor(Math.random() * emojis.length)];
-                this.speed = Math.random() * 3 + 1;
-                this.opacity = Math.random();
-            }
-
-            update(){
-                this.y += this.speed;
-                if (this.y > canvas.height){
-                    this.y = 0 - this.size;
-                    this.x = Math.random() * canvas.width;
-                    this.opacity = Math.random();
-                }
-            }
-
-            draw(){
-                ctx.globalAlpha = this.opacity;
-                ctx.font = `${this.size}px serif`;
-                ctx.fillText(this.emoji, this.x, this.y);
-                ctx.globalAlpha = 1;
-            }
-        }
-
-        function addConfetti(){
-            for (let i = 0; i < 30; i++){ 
-                confettiArray.push(new Confetti());
-            }
-        }
-
-        function animate(){
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            confettiArray.forEach(confetti =>{
-                confetti.update();
-                confetti.draw();
-            });
-            requestAnimationFrame(animate);
-        }
-
-        addConfetti();
-        animate();
-
-
-
-
-
 
 
 
