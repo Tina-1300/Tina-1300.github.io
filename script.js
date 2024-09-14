@@ -1,6 +1,7 @@
+
 const targetDate = new Date('September 13, 2024 00:00:00').getTime();
 
-function countdown() {
+function countdown(){
     const now = new Date().getTime();
     const distance = targetDate - now;
 
@@ -24,22 +25,6 @@ function countdown() {
 const interval = setInterval(countdown, 1000);
 
 
-document.addEventListener("DOMContentLoaded", function(){
-    if (document.cookie.indexOf("popupShown=") === -1){
-        var popup = document.getElementById('popup');
-        var overlay = document.getElementById('popupOverlay');
-        popup.style.display = 'block';
-        overlay.style.display = 'block';
-
-        document.getElementById('closePopup').addEventListener('click', function(){
-            popup.style.display = 'none';
-            overlay.style.display = 'none';
-        });
-
-
-    }
-});
-
 
 function playSound(){
     const audio = new Audio('song/h4.mp3'); // h4.mp3 = MeandtheDevil
@@ -51,9 +36,4 @@ function playSound(){
 }
 
 
-
-
 playSound();
-
-
-

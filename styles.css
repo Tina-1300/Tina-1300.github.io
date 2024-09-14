@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: black; /* Arrière-plan noir */
+    background-color: black;
     font-family: Arial, sans-serif;
     color: rgb(104, 33, 171);
     display: flex;
@@ -42,13 +42,13 @@ body {
     display: none;
     font-size: 24px;
     font-weight: bold;
-    color: #6711f0; /* Couleur du message final */
+    color: #6711f0; 
 }
 
-/* Responsive pour les petits écrans */
+
 @media (max-width: 768px) {
     .countdown > div span {
-        font-size: 36px; /* Taille plus petite du texte */
+        font-size: 36px; 
     }
 }
 
