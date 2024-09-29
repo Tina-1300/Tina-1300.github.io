@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+/* Styles pour le logo dans la barre de navigation */
+.nav-logo {
+    width: 50px; /* Ajustez la taille du logo */
+    height: auto;
+    margin-right: 15px; /* Ajoute un espace à droite du logo */
+    vertical-align: middle; /* Aligne le logo au centre de la nav */
+}
+
+nav {
+    display: flex; /* Utilise Flexbox pour aligner le logo et les liens */
+    align-items: center; /* Centre verticalement le logo et les liens */
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex; /* Pour aligner les éléments du menu horizontalement */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 15px; /* Espacement entre les liens du menu */
+}
+
+
+
+#services {
+    padding: 2rem;
+    text-align: center;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}

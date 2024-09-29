@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - Flask Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/AutoSaveLogo.jpg') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> <!-- Ajout de 'fixed-top' -->
+            <a class="navbar-brand" href="/welcome">
+                <img src="{{ url_for('static', filename='img/AutoSaveLogo.jpg') }}" alt="Logo de SaveAuto" class="nav-logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/welcome">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/welcome#services">Nos Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/welcome#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/settings">Paramètres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/panel">Panel</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5" style="margin-top: 70px;"> <!-- Ajustement pour compenser le menu fixe -->
+        <h1>Bienvenue sur SaveAuto</h1>
+
+        <section id="services">
+            <h2>Nos Services</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <h3>Service 1 :</h3>
+                    <p>Nous offrons un service exceptionnel pour répondre à tous vos besoins de stockage de fichiers. Vous pouvez stocker 
+                    jusqu'à 100 MO par utilisateur. Si vous voulez stocker plus, par exemple 100 MO de plus, il faut payer pour que nous puissions
+                    racheter des disques pour augmenter la capacité de stockage. Vos fichiers seront en sécurité, et vous pourrez
+                    les récupérer, supprimer ou en ajouter.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact" class="mt-5">
+        <h2>Contactez-nous</h2>
+        <p>Pour plus d'informations, veuillez nous <a href="https://t.me/AutoSaveGroupe" target="_blank" rel="noopener noreferrer">contacter sur notre groupe Telegram</a>.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

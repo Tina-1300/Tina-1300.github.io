@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres - SaveAuto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/AutoSaveLogo.jpg') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/welcome">
+                <img src="{{ url_for('static', filename='img/AutoSaveLogo.jpg') }}" alt="Logo de SaveAuto" class="nav-logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/welcome">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/welcome#services">Nos Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/welcome#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/settings">Paramètres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/panel">Panel</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h1>Paramètres de l'utilisateur</h1>
+        <p>Changez votre mot de passe ici.</p>
+
+        <!-- Formulaire de changement de mot de passe -->
+        <form action="{{ url_for('change_password') }}" method="post">
+            <div class="mb-3">
+                <label for="pseudo" class="form-label">pseudo</label>
+                <input type="text" class="form-control" id="pseudo" name="pseudo" required>
+            </div>
+            <div class="mb-3">
+                <label for="new_password" class="form-label">Nouveau mot de passe</label>
+                <input type="password" class="form-control" id="new_password" name="new_password" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">password actuelle</label>
+                <input type="password" class="form-control" name="password" placeholder="Mot de passe actuelle" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Changer le mot de passe</button>
+        </form>
+
+        <hr>
+
+        <h2>Supprimer le compte</h2>
+        <p>Pour supprimer votre compte, veuillez entrer votre nom d'utilisateur et votre mot de passe.</p>
+
+        <!-- Formulaire de suppression de compte -->
+        <form action="{{ url_for('delete_account') }}" method="post">
+            <div class="mb-3">
+                <label for="username" class="form-label">Nom d'utilisateur</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="delete_password" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" id="delete_password" name="delete_password" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Supprimer le compte</button>
+        </form>
+
+        <hr>
+
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">Déconnexion</a>
+
+        <!-- Affichage des messages flash -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="mt-3">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

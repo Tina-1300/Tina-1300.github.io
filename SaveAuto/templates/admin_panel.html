@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel d'administration - SaveAuto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/AutoSaveLogo.jpg') }}">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Couleur de fond douce */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #007bff; /* Couleur bleue */
+            font-size: 2.5rem; /* Taille du titre */
+            margin-bottom: 20px;
+        }
+
+        .nav-logo {
+            height: 40px;
+            transition: transform 0.2s; /* Animation de survol */
+        }
+
+        .navbar-nav .nav-link {
+            transition: color 0.2s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #0056b3; /* Couleur au survol */
+        }
+
+        .btn-danger {
+            background-color: #dc3545; /* Couleur rouge pour les boutons */
+            border: none; /* Supprime la bordure */
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Couleur des boutons au survol */
+        }
+
+        /* Classe pour l'espacement */
+        .mt-2 {
+            margin-top: 0.5rem; /* Ajoute de l'espace au-dessus */
+        }
+
+        /* Responsivité */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Réduction de la taille sur les petits écrans */
+            }
+
+            .container {
+                padding: 10px; /* Réduction du padding sur les petits écrans */
+            }
+
+            .table th, .table td {
+                white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
+            }
+
+            .table-responsive {
+                overflow-x: auto; /* Permet le défilement horizontal sur les petits écrans */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/welcome">
+                <img src="{{ url_for('static', filename='img/AutoSaveLogo.jpg') }}" alt="Logo de SaveAuto" class="nav-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/welcome">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/welcome#services">Nos Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/welcome#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/settings">Paramètres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/panel">Panel</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h1>Panneau d'administration</h1>
+
+        <div class="table-responsive"> <!-- Ajout de la classe responsive -->
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Pseudo</th> <!-- Utilisation de pseudo -->
+                        <th>Fichiers Téléchargés</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.pseudo }}</td> <!-- Changement ici -->
+                        <td>
+                            <ul class="list-unstyled mb-0"> <!-- Utilisation de list-unstyled pour les fichiers -->
+                                {% for file in user.files %}
+                                <li class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <a href="{{ url_for('view_file_admin', filename=file, pseudo=user.pseudo) }}" target="_blank">{{ file }}</a>
+                                    </div>
+                                    <form method="POST" action="{{ url_for('delete_file_admin', pseudo=user.pseudo, filename=file) }}" style="display:inline;">
+                                        <button type="submit" class="btn btn-sm btn-danger mt-2">Supprimer</button> <!-- Classe mt-2 ajoutée -->
+                                    </form>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <form action="{{ url_for('delete_user', user_id=user.id) }}" method="post"> <!-- Utilisation de user.id -->
+                                <button type="submit" class="btn btn-danger">Supprimer Utilisateur</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Affichage des messages flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="mt-3">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
