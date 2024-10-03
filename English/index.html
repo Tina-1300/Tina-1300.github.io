@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Révition anglais</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .separator {
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        .pdf-view {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+        }
+                /* Styles pour les lignes du tableau */
+        .table tbody tr {
+            transition: background-color 0.3s;
+        }
+
+        .table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9; /* Couleur pour les lignes impaires */
+        }
+
+        .table tbody tr:hover {
+            background-color: #e2e6ea; /* Couleur au survol */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>Verbes irrégulier</h1>
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Infinitif</th>
+                    <th>Prétérit</th>
+                    <th>Participe Passé</th>
+                    <th>Traduction</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>be</td>
+                    <td>was, were</td>
+                    <td>been</td>
+                    <td>être</td>
+                </tr>
+                <tr>
+                    <td>beat</td>
+                    <td>beat</td>
+                    <td>beaten</td>
+                    <td>battre</td>
+                </tr>
+                <tr>
+                    <td>become</td>
+                    <td>became</td>
+                    <td>become</td>
+                    <td>devenir</td>
+                </tr>
+                <tr>
+                    <td>begin</td>
+                    <td>began</td>
+                    <td>begun</td>
+                    <td>commencer</td>
+                </tr>
+                <tr>
+                    <td>bet</td>
+                    <td>bet</td>
+                    <td>bet</td>
+                    <td>parier</td>
+                </tr>
+                <tr>
+                    <td>bind</td>
+                    <td>bound</td>
+                    <td>bound</td>
+                    <td>relier (un livre)</td>
+                </tr>
+                <tr>
+                    <td>bite</td>
+                    <td>bit</td>
+                    <td>bitten</td>
+                    <td>mordre</td>
+                </tr>
+                <tr>
+                    <td>bleed</td>
+                    <td>bled</td>
+                    <td>bled</td>
+                    <td>saigner</td>
+                </tr>
+                <tr>
+                    <td>blow</td>
+                    <td>blew</td>
+                    <td>blown</td>
+                    <td>souffler (se moucher)</td>
+                </tr>
+                <tr>
+                    <td>break</td>
+                    <td>broke</td>
+                    <td>broken</td>
+                    <td>casser</td>
+                </tr>
+                <tr>
+                    <td>bring</td>
+                    <td>brought</td>
+                    <td>brought</td>
+                    <td>apporter</td>
+                </tr>
+                <tr>
+                    <td>build</td>
+                    <td>built</td>
+                    <td>built</td>
+                    <td>construire</td>
+                </tr>
+                <tr>
+                    <td>burn</td>
+                    <td>burnt</td>
+                    <td>burnt</td>
+                    <td>brûler</td>
+                </tr>
+                <tr>
+                    <td>burst</td>
+                    <td>burst</td>
+                    <td>burst</td>
+                    <td>éclater (faire irruption)</td>
+                </tr>
+                <tr>
+                    <td>buy</td>
+                    <td>bought</td>
+                    <td>bought</td>
+                    <td>acheter</td>
+                </tr>
+                <tr>
+                    <td>catch</td>
+                    <td>caught</td>
+                    <td>caught</td>
+                    <td>attraper</td>
+                </tr>
+                <tr>
+                    <td>choose</td>
+                    <td>chose</td>
+                    <td>chosen</td>
+                    <td>choisir</td>
+                </tr>
+                <tr>
+                    <td>come</td>
+                    <td>came</td>
+                    <td>come</td>
+                    <td>venir</td>
+                </tr>
+                <tr>
+                    <td>cost</td>
+                    <td>cost</td>
+                    <td>cost</td>
+                    <td>coûter</td>
+                </tr>
+                <tr>
+                    <td>cut</td>
+                    <td>cut</td>
+                    <td>cut</td>
+                    <td>couper</td>
+                </tr>
+                <tr>
+                    <td>do</td>
+                    <td>did</td>
+                    <td>done</td>
+                    <td>faire</td>
+                </tr>
+                <tr>
+                    <td>draw</td>
+                    <td>drew</td>
+                    <td>drawn</td>
+                    <td>dessiner</td>
+                </tr>
+                <tr>
+                    <td>dream</td>
+                    <td>dreamt</td>
+                    <td>dreamt</td>
+                    <td>rêver</td>
+                </tr>
+                <tr>
+                    <td>drink</td>
+                    <td>drank</td>
+                    <td>drunk</td>
+                    <td>boire</td>
+                </tr>
+                <tr>
+                    <td>drive</td>
+                    <td>drove</td>
+                    <td>driven</td>
+                    <td>conduire</td>
+                </tr>
+                <tr>
+                    <td>eat</td>
+                    <td>ate</td>
+                    <td>eaten</td>
+                    <td>manger</td>
+                </tr>
+                <tr>
+                    <td>fall</td>
+                    <td>fell</td>
+                    <td>fallen</td>
+                    <td>tomber</td>
+                </tr>
+                <tr>
+                    <td>feed</td>
+                    <td>fed</td>
+                    <td>fed</td>
+                    <td>nourrir</td>
+                </tr>
+                <tr>
+                    <td>feel</td>
+                    <td>felt</td>
+                    <td>felt</td>
+                    <td>se sentir, ressentir</td>
+                </tr>
+                <tr>
+                    <td>fight</td>
+                    <td>fought</td>
+                    <td>fought</td>
+                    <td>se battre</td>
+                </tr>
+                <tr>
+                    <td>find</td>
+                    <td>found</td>
+                    <td>found</td>
+                    <td>trouver</td>
+                </tr>
+                <tr>
+                    <td>fly</td>
+                    <td>flew</td>
+                    <td>flown</td>
+                    <td>voler (dans les airs)</td>
+                </tr>
+                <tr>
+                    <td>forget</td>
+                    <td>forgot</td>
+                    <td>forgotten</td>
+                    <td>oublier</td>
+                </tr>
+                <tr>
+                    <td>forgive</td>
+                    <td>forgave</td>
+                    <td>forgiven</td>
+                    <td>pardonner</td>
+                </tr>
+                <tr>
+                    <td>freeze</td>
+                    <td>froze</td>
+                    <td>frozen</td>
+                    <td>geler, se figer</td>
+                </tr>
+                <tr>
+                    <td>get</td>
+                    <td>got</td>
+                    <td>got</td>
+                    <td>obtenir</td>
+                </tr>
+                <tr>
+                    <td>give</td>
+                    <td>gave</td>
+                    <td>given</td>
+                    <td>donner</td>
+                </tr>
+                <tr>
+                    <td>go</td>
+                    <td>went</td>
+                    <td>gone</td>
+                    <td>aller</td>
+                </tr>
+                <tr>
+                    <td>grow</td>
+                    <td>grew</td>
+                    <td>grown</td>
+                    <td>grandir</td>
+                </tr>
+                <tr>
+                    <td>hang</td>
+                    <td>hung</td>
+                    <td>hung</td>
+                    <td>pendre, suspendre (trainer)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="separator"></div>
+
+
+        <h1>Les Pronoms Interrogatifs</h1>
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Pronom Interrogatif</th>
+                    <th>Interroge sur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who ? = Qui</td>
+                    <td>Une / des personnes</td>
+                </tr>
+                <tr>
+                    <td>Where ? = Où</td>
+                    <td>Le lieu</td>
+                </tr>  
+                <tr>
+                    <td>Where ... from ? = d'où</td>
+                    <td>Le pays / la ville d'origine</td>
+                </tr>
+                <tr>
+                    <td>When ? = Quand</td>
+                    <td>le moment</td>
+                </tr>
+                <tr>
+                    <td>Whose + nom ? = à qui</td>
+                    <td>Le possesseur</td>
+                </tr>
+                <tr>
+                    <td>Why ? = pourquoi</td>
+                    <td>la cause</td>
+                </tr>
+                <tr>
+                    <td>What ? = que, qu'elle, quoi, quesque</td>
+                    <td>Une chose</td>
+                </tr>
+                <tr>
+                    <td>Which ? = le quelle, la quelle, les quelle</td>
+                    <td>Une sélection entre 2 choses</td>
+                </tr>
+                <tr>
+                    <td>What colour ? = de quelles couleurs</td>
+                    <td>La couleur</td>
+                </tr>
+                <tr>
+                    <td>What ... for ? = dans quelle but</td>
+                    <td>Le but</td>
+                </tr>
+                <tr>
+                    <td>What do / does ... do ? = quelle métier</td>
+                    <td>Le métier</td>
+                </tr>
+                <tr>
+                    <td>What ... like ? = comment physiquement</td>
+                    <td>l'aspect (chose / personne)</td>
+                </tr>
+                <tr>
+                    <td>How + be ? = comment vas-tu</td>
+                    <td>L'état de santé</td>
+                </tr>
+                <tr>
+                    <td>How old / tall / long / wide ?</td>
+                    <td>L'âge, taille, longeur, largeur</td>
+                </tr>
+                <tr>
+                    <td>How often ? = à quelle fréquence</td>
+                    <td>La fréquence</td>
+                </tr>
+                <tr>
+                    <td>How many + nom pluriel ? = combien</td>
+                    <td>Le nombre</td>
+                </tr>
+                <tr>
+                    <td>How much ? = combien</td>
+                    <td>Le prix ou la quantité (indénombrable)</td>
+                </tr>
+                <tr>
+                    <td>How well ? = Comment</td>
+                    <td>La compétence</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <div class="separator"></div>
+
+
+        <h1>Adjectifs et pronom en anglais</h1>
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Pronoms sujets</th>
+                    <th>Pronoms complément</th>
+                    <th>Adjectifs possessifs + nom</th>
+                    <th>Pronom Possesifs</th>
+                    <th>Pronom réfléchis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>I <br>you<br>he<br>she<br>it<br>we<br>you<br>they</td>
+                    <td>me<br>you<br>him<br>her<br>it<br>us<br>you<br>them</td>
+                    <td>my<br>your<br>his<br>her<br>its<br>our<br>your<br>their</td>
+                    <td>mine<br>yours<br>his<br>hers<br>its<br>ours<br>yours<br>theirs</td>
+                    <td>myself<br>yourself<br>himself<br>herself<br>itself<br>ourselves<br>yourselves<br>themselves</td>
+                </tr>
+                <tr>
+            </tbody>
+        </table>
+
+
+        <div class="separator"></div>
+
+        <h2>Emotions and personality</h2>
+        <iframe class="pdf-view" src="Emotions_and_personality.pdf" frameborder="0"></iframe>
+
+        <div class="separator"></div>
+
+        <h2>WH-Question ouvertes</h2>
+        <iframe class="pdf-view" src="WH-Question.pdf" frameborder="0"></iframe>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
