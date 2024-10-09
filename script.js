@@ -1,5 +1,5 @@
 
-const targetDate = new Date('October 19, 2024 00:00:00').getTime();
+const targetDate = new Date('November 3, 2024 00:00:00').getTime();
 
 function countdown(){
     const now = new Date().getTime();
