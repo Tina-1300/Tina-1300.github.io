@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll infini avec sections colorées</title>
+    <style>
+        /* Style de la page */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+        }
+
+        /* Style des sections */
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5rem;
+            color: white;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container"></div>
+
+    <script>
+
+        const emojis = [
+            "😀", "🐱", "🌍", "🚀", "🎸", "🍕", "🎨", "🌈", "🐳", "🔥", 
+            "🌟", "🎉", "🍀", "💻", "📱", "🍔", "🏖️", "🎧", "📚", "🧩", 
+            "🥳", "🤖", "🧁", "🌞", "🦄", "🎵", "🧃", "🎈", "🌿", "🥂", 
+            "🍿", "🏆", "🍫", "🛠️", "🌌", "⚽", "📷", "🎲", "🌹", "🧑‍💻"
+        ];
+
+    const couleurs = [
+        "#FF5733", "#33FF57", "#3357FF", "#FF33A5", "#FF8C33", "#33FFA2", 
+        "#33C1FF", "#FFD633", "#8B33FF", "#FF335E", "#2ECC71", "#3498DB", 
+        "#E74C3C", "#9B59B6", "#1ABC9C", "#F39C12", "#D35400", "#8E44AD", 
+        "#2980B9", "#C0392B", "#27AE60", "#16A085", "#F1C40F", "#E67E22", 
+        "#BDC3C7", "#7F8C8D", "#34495E", "#2C3E50", "#A569BD", "#1E8449", 
+        "#85C1E9", "#CD6155", "#2980B9", "#F4D03F", "#AF7AC5", "#FF5733", 
+        "#A3E4D7", "#E59866", "#F7DC6F", "#DC7633", "#7FB3D5"
+    ];
+
+
+        const nombreSections = 30;
+
+        function genererSection() {
+            const section = document.createElement("div");
+            section.className = "section";
+            
+
+            const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+            const couleur = couleurs[Math.floor(Math.random() * couleurs.length)];
+            const hauteur = 105;
+            section.textContent = emoji;
+            section.style.backgroundColor = couleur;
+            section.style.height = `${hauteur}vh`;
+
+            return section;
+        }
+
+        function ajouterSections(nbSections = 10){
+            const container = document.getElementById("container");
+            for (let i = 0; i < nbSections; i++){
+                container.appendChild(genererSection());
+            }
+        }
+
+        ajouterSections(nombreSections);
+
+        window.addEventListener('scroll', () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100){
+                ajouterSections(30);
+            }
+        });
+/*
+        function defilementAutomatique(){
+    window.scrollBy(0, 17
+
+    ); 
+}
+
+
+setInterval(defilementAutomatique, 10);
+*/
+    </script>
+</body>
+</html>
