@@ -1,4 +1,3 @@
-
 const targetDate = new Date('November 3, 2024 00:00:00').getTime();
 
 function countdown(){
@@ -10,12 +9,12 @@ function countdown(){
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById('days').innerHTML = `<span>${days}</span>jours`;
-    document.getElementById('hours').innerHTML = `<span>${hours}</span>heures`;
-    document.getElementById('minutes').innerHTML = `<span>${minutes}</span>minutes`;
-    document.getElementById('seconds').innerHTML = `<span>${seconds}</span>secondes`;
+    document.getElementById('days').querySelector('span').textContent = days;
+    document.getElementById('hours').querySelector('span').textContent = hours;
+    document.getElementById('minutes').querySelector('span').textContent = minutes;
+    document.getElementById('seconds').querySelector('span').textContent = seconds;
 
-    if (distance < 0) {
+    if (distance < 0){
         clearInterval(interval);
         document.querySelector('.countdown').style.display = 'none';
         document.getElementById('messageFinal').style.display = 'block';
@@ -23,17 +22,3 @@ function countdown(){
 }
 
 const interval = setInterval(countdown, 1000);
-
-
-
-function playSound(){
-    const audio = new Audio('song/h4.mp3'); // h4.mp3 = MeandtheDevil
-    audio.loop = true;
-    
-    document.addEventListener('click', function(){
-        audio.play();
-    });
-}
-
-
-playSound();
