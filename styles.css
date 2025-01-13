@@ -1,0 +1,21 @@
+body{
+    background-color: #1c1c1e;
+    color: #d1d1d1;
+}
+
+.count-box{
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.count-box span{
+    color: #fff;
+}
+
+.message-final{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e2a4f5;
+}

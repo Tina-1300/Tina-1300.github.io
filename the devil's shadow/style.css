@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #FF5733;
+    animation: glow 1.5s infinite alternate;
+}
+
+h2 {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #FF4747;
+    text-shadow: 0 0 20px rgba(255, 71, 71, 0.8), 0 0 30px rgba(255, 71, 71, 0.7);
+    animation: neon 1.5s infinite alternate;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #ccc;
+    opacity: 0.8;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.profile-container {
+    margin-top: 40px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #FF5733;
+    box-shadow: 0 0 20px rgba(255, 71, 71, 0.7);
+    object-fit: cover;
+    animation: pulse 2s infinite alternate;
+}
+
+.team-info {
+    margin-top: 40px;
+    opacity: 0.7;
+}
+
+.team-info h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Animations */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #FF5733, 0 0 20px #FF5733;
+    }
+    100% {
+        text-shadow: 0 0 20px #FF5733, 0 0 40px #FF5733;
+    }
+}
+
+@keyframes neon {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 71, 71, 0.6), 0 0 30px rgba(255, 71, 71, 0.7), 0 0 50px rgba(255, 71, 71, 0.9);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 71, 71, 0.6), 0 0 40px rgba(255, 71, 71, 0.7), 0 0 70px rgba(255, 71, 71, 1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Styles Responsives */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .team-info h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .team-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}
+
