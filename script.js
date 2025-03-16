@@ -1,4 +1,4 @@
-const targetDate = new Date('March 1, 2025 00:00:00').getTime();
+const targetDate = new Date('May 31, 2025 00:00:00').getTime();
 
 function countdown(){
     const now = new Date().getTime();
@@ -24,13 +24,27 @@ function countdown(){
 const interval = setInterval(countdown, 1000);
 
 let backgroundSound = null;
+
+const musicList = [
+    "AlecBenjaminLetMeDownSlowlyPiano.mp3", 
+    "IndochineNosCelebrations.mp3", 
+    "IndochineLeChantDesCygnes.mp3",
+    "RaspoutineXAnotherlove.mp3"
+]; 
+
 function RunAudi(){
-    if (!backgroundSound){
-        backgroundSound = new Audio("LouisAttackJeTemeneAuVent.mp3");
-        backgroundSound.loop = true;
-        backgroundSound.play();
+
+    let newMusic = musicList[Math.floor(Math.random() * musicList.length)];
+
+    if (backgroundSound){
+        backgroundSound.pause();
+        backgroundSound.currentTime = 0;
     }
-};
+
+    backgroundSound = new Audio(newMusic);
+    backgroundSound.loop = true;
+    backgroundSound.play();
+}
 
 document.addEventListener('click', function(){
     RunAudi();
