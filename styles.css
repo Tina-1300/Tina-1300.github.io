@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #1c1c1e, #343a40);  /* Conserve le fond initial */
+    color: #e2e2e2;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: bg-animation 40s ease-in-out infinite alternate;
+}
+
+@keyframes bg-animation {
+    0% {
+        background: linear-gradient(45deg, #1c1c1e, #343a40);  /* Pas de changement de couleur */
+    }
+    50% {
+        background: linear-gradient(45deg, #1c1c1e, #343a40);  /* Toujours le même fond */
+    }
+    100% {
+        background: linear-gradient(45deg, #1c1c1e, #343a40);  /* Retour au fond initial */
+    }
+}
+
+.container {
+    text-align: center;
+}
+
+.countdown {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.count-box {
+    background-color: #444;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.count-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    background-color: #555;
+}
+
+.count-box span {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.count-box .small {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.message-final {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e2a4f5;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
