@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Announcement-WinSpeak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset basique */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 40px 20px;
+      color: #222;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      color: #0d3b66;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      gap: 30px;
+    }
+
+    .annonce {
+      background-color: #fff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.07),
+        0 6px 12px rgba(0, 0, 0, 0.05);
+      border-left: 6px solid #007bff; /* Couleur par défaut */
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: default;
+      position: relative;
+      padding-left: 40px; /* espace pour icône */
+    }
+
+    .annonce:hover {
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12),
+        0 12px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .annonce h2 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin: 0 0 10px 0;
+      color: inherit; /* couleur héritée pour correspondre au thème */
+    }
+
+    .date {
+      display: inline-block;
+      background: #007bff;
+      color: #fff;
+      padding: 4px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      user-select: none;
+      box-shadow: 0 1px 4px rgba(0, 123, 255, 0.4);
+    }
+
+    .annonce p {
+      font-size: 1rem;
+      color: #444;
+      margin: 0 0 15px 0;
+    }
+
+    /* Bouton En savoir plus */
+    .btn-en-savoir-plus {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .btn-en-savoir-plus:hover {
+      background-color: #0056b3;
+    }
+
+    /* Thèmes */
+
+    /* Mise à jour mineure */
+    .maj-mineure {
+      border-left-color: #c97d49; /* Brun terre cuite */
+      color: #8c4d23;
+    }
+    .maj-mineure .date {
+      background: #c97d49;
+      box-shadow: 0 1px 4px rgba(201, 125, 73, 0.4);
+    }
+    .maj-mineure::before {
+      content: "🔧";
+      position: absolute;
+      left: 12px;
+      top: 25px;
+      font-size: 1.4rem;
+    }
+    .maj-mineure .btn-en-savoir-plus {
+      background-color: #c97d49;
+    }
+    .maj-mineure .btn-en-savoir-plus:hover {
+      background-color: #8c4d23;
+    }
+
+
+
+    /* Patch correctif */
+    .patch {
+      border-left-color: #6610f2;
+      color: #4b0082;
+    }
+    .patch .date {
+      background: #6610f2;
+      box-shadow: 0 1px 4px rgba(102, 16, 242, 0.6);
+    }
+    .patch .btn-en-savoir-plus {
+      background-color: #6610f2;
+    }
+    .patch .btn-en-savoir-plus:hover {
+      background-color: #4b0082;
+    }
+    .patch::before {
+      content: "🧩";
+      position: absolute;
+      left: 12px;
+      top: 25px;
+      font-size: 1.4rem;
+    }
+
+    /* Bouton pour chaque thème */
+    .maj .btn-en-savoir-plus {
+    background-color: #007bff;
+    }
+    .maj .btn-en-savoir-plus:hover {
+    background-color: #0056b3;
+    }
+
+    .faille .btn-en-savoir-plus {
+    background-color: #dc3545;
+    }
+    .faille .btn-en-savoir-plus:hover {
+    background-color: #a71d2a;
+    }
+
+    .maintenance .btn-en-savoir-plus {
+    background-color: #fd7e14;
+    }
+    .maintenance .btn-en-savoir-plus:hover {
+    background-color: #b35e00;
+    }
+
+    .fin-support .btn-en-savoir-plus {
+    background-color: #6c757d;
+    }
+    .fin-support .btn-en-savoir-plus:hover {
+    background-color: #4b5257;
+    }
+
+    .nouvelle-fonction .btn-en-savoir-plus {
+    background-color: #28a745;
+    }
+    .nouvelle-fonction .btn-en-savoir-plus:hover {
+    background-color: #1e5631;
+    }
+
+    .maj {
+      border-left-color: #007bff;
+      color: #004a99;
+    }
+    .maj .date {
+      background: #007bff;
+      box-shadow: 0 1px 4px rgba(0, 123, 255, 0.4);
+    }
+    .maj::before {
+      content: "⬆️";
+      position: absolute;
+      left: 12px;
+      top: 25px;
+      font-size: 1.4rem;
+    }
+
+    .faille {
+      border-left-color: #dc3545;
+      color: #a71d2a;
+    }
+    .faille .date {
+      background: #dc3545;
+      box-shadow: 0 1px 4px rgba(220, 53, 69, 0.6);
+    }
+    .faille::before {
+      content: "⚠️";
+      position: absolute;
+      left: 12px;
+      top: 25px;
+      font-size: 1.4rem;
+    }
+
+    .maintenance {
+      border-left-color: #fd7e14;
+      color: #b35e00;
+    }
+    .maintenance .date {
+      background: #fd7e14;
+      box-shadow: 0 1px 4px rgba(253, 126, 20, 0.6);
+    }
+    .maintenance::before {
+      content: "🛠️";
+      position: absolute;
+      left: 12px;
+      top: 25px;
+      font-size: 1.4rem;
+    }
+
+    .fin-support {
+      border-left-color: #6c757d;
+      color: #4b5257;
+    }
+    .fin-support .date {
+      background: #6c757d;
+      box-shadow: 0 1px 4px rgba(108, 117, 125, 0.6);
+    }
+    .fin-support::before {
+      content: "⏳";
+      position: absolute;
+      left: 12px;
+      top: 25px;
+      font-size: 1.4rem;
+    }
+
+    .nouvelle-fonction {
+      border-left-color: #28a745;
+      color: #1e5631;
+    }
+    .nouvelle-fonction .date {
+      background: #28a745;
+      box-shadow: 0 1px 4px rgba(40, 167, 69, 0.6);
+    }
+    .nouvelle-fonction::before {
+      content: "✨";
+      position: absolute;
+      left: 12px;
+      top: 25px;
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WinSpeak Announcements</h1>
+  </header>
+
+  <div class="container">
+
+    <article class="annonce maj-mineure">
+      <h2>Minor Update - Incremental Improvements</h2>
+      <div class="date">20 mai 2025</div>
+      <p>
+        A minor update has been made to restructure the project code in accordance with SOLID principles and to put official documentation online.
+      </p>
+      <a href="minor-update_1_1_0.html" target="_blank" class="btn-en-savoir-plus">Learn more</a>
+      <!--<button herf="minor-update_1_1_0.html" class="btn-en-savoir-plus">Learn more</button>-->
+    </article>
+
+    <!--
+    <article class="annonce patch">
+      <h2>Patch correctif – Résolution de bugs</h2>
+      <div class="date">16 mai 2025</div>
+      <p>
+        Un patch a été appliqué pour corriger un problème de synchronisation affectant certains utilisateurs. Ce correctif garantit un fonctionnement fluide et sans interruption. Aucune action n’est requise de votre part.
+      </p>
+      <button class="btn-en-savoir-plus">En savoir plus</button>
+    </article>
+
+    <article class="annonce maj">
+      <h2> Mise à jour majeure – Amélioration du système</h2>
+      <div class="date">17 mai 2025</div>
+      <p>
+        Nous avons le plaisir de vous informer qu’une mise à jour majeure sera déployée prochainement. Elle comprend des améliorations de performance, une interface repensée et un renforcement global de la sécurité. Des interruptions temporaires de service pourraient survenir durant l’opération. Merci pour votre compréhension.
+      </p>
+      <button class="btn-en-savoir-plus">En savoir plus</button>
+    </article>
+
+    <article class="annonce faille">
+      <h2>Notification de vulnérabilité corrigée</h2>
+      <div class="date">14 mai 2025</div>
+      <p>
+        Suite à la détection d’une vulnérabilité critique dans notre module d’authentification, un correctif a été déployé en urgence. Nous vous recommandons de redémarrer vos systèmes pour appliquer la mise à jour. Aucune fuite de données n’a été identifiée. Merci pour votre vigilance.
+      </p>
+      <button class="btn-en-savoir-plus">En savoir plus</button>
+    </article>
+
+    <article class="annonce maintenance">
+      <h2>Maintenance planifiée</h2>
+      <div class="date">10 mai 2025</div>
+      <p>
+        Une maintenance sera effectuée le 12 mai 2025 entre 01h00 et 03h00 (UTC). Cette opération vise à optimiser nos services et renforcer la stabilité de notre infrastructure. Une indisponibilité temporaire est possible durant cette période.
+      </p>
+      <button class="btn-en-savoir-plus">En savoir plus</button>
+    </article>
+
+    <article class="annonce fin-support">
+      <h2>Fin de support – Version 2.3</h2>
+      <div class="date">5 mai 2025</div>
+      <p>
+        La version 2.3 de notre plateforme atteindra sa fin de vie le 1er juin 2025. Nous vous invitons à migrer vers la version 3.0 pour continuer à bénéficier des mises à jour de sécurité et du support technique.
+      </p>
+      <button class="btn-en-savoir-plus">En savoir plus</button>
+    </article>
+
+    <article class="annonce nouvelle-fonction">
+      <h2>Lancement d’une nouvelle fonctionnalité : Audit automatique</h2>
+      <div class="date">30 avril 2025</div>
+      <p>
+        Nous sommes heureux d’annoncer le lancement d’un module d’audit automatique de configuration. Celui-ci permet une vérification en temps réel de la conformité de votre environnement avec les meilleures pratiques de sécurité. Disponible dès aujourd’hui.
+      </p>
+      <button class="btn-en-savoir-plus">En savoir plus</button>
+    </article> 
+  -->
+  </div>
+</body>
+</html>

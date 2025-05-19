@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Is muted - WinSpeak</title>
+    <title>Get volume - WinSpeak</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Is muted";
-        var mkdocs_page_input_path = "features\\is_muted.md";
+        var mkdocs_page_name = "Get volume";
+        var mkdocs_page_input_path = "features\\get_volume.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -87,7 +87,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Is muted</li>
+      <li class="breadcrumb-item active">Get volume</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -96,18 +96,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="fonction-is_muted">Fonction : <code>is_muted()</code></h2>
+                <h2 id="fonction-get_volume">Fonction : <code>get_volume()</code></h2>
 <h3 id="description">Description</h3>
-<p>Returns <code>true</code> if the audio is muted, <code>false</code> if it is not muted.</p>
+<p>This method returns a float type which is the current speaker volume</p>
 <h3 id="settings">Settings</h3>
 <p>No parameters..</p>
 <h3 id="returned-value">Returned value</h3>
 <ul>
-<li>Returns <code>true</code> if the audio is muted, <code>false</code> if it is not muted.</li>
+<li>returns the current speaker volume via a float type. </li>
 </ul>
 <h3 id="example-of-use">Example of use</h3>
-<pre><code class="language-cpp">#include &quot;WinSpeak/WinSpeak.hpp&quot;
-#include &quot;WinSpeak/AudioDeviceManager.hpp&quot;
+<pre><code class="language-cpp">#include &lt;WinSpeak/WinSpeak.hpp&gt;
+#include &lt;WinSpeak/AudioDeviceManager.hpp&gt;
 #include &lt;iostream&gt;
 
 // g++ -O2 -Wall -Wextra -o test.exe test.cpp -lWinSpeak -lole32 -lstdc++ -luuid
@@ -119,7 +119,7 @@ int main(){
         WinSpeak::AudioDeviceManager manager;
         WinSpeak::WinSpeak speaker(&amp;manager);
 
-        std::cout &lt;&lt; &quot;Audio muted : &quot; &lt;&lt; (speaker.is_muted() ? &quot;yes&quot; : &quot;no&quot;) &lt;&lt; &quot;\n&quot;;
+        std::cout &lt;&lt; &quot;the current volume : &quot; &lt;&lt; speaker.get_volume() &lt;&lt; &quot; %&quot; &lt;&lt; &quot;\n&quot;;
 
     }catch (const std::exception&amp; e){
         std::cerr &lt;&lt; &quot;Error : &quot; &lt;&lt; e.what() &lt;&lt; &quot;\n&quot;;

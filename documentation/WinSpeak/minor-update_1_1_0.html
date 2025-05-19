@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>minor update - 1.1.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #ffffff;
+      --bg-dark: #1e1e1e;
+      --text-light: #1f1f1f;
+      --text-dark: #f0f0f0;
+      --primary: #007acc;
+      --accent: #f5871f;
+      --border: rgba(0,0,0,0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: var(--bg-dark);
+        color: var(--text-dark);
+      }
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: 2rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.3rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: var(--primary);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    p, li {
+      margin: 0.4em 0;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    blockquote {
+      border-left: 4px solid var(--primary);
+      background-color: rgba(0, 122, 204, 0.05);
+      margin: 1em 0;
+      padding: 0.5em 1em;
+      font-style: italic;
+    }
+
+    code, pre {
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+      background-color: #f5f5f5;
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+    }
+
+    pre {
+      background-color: #2d2d2d;
+      color: #ffffff;
+      overflow-x: auto;
+      padding: 1em;
+    }
+
+    section.card {
+      background: rgba(0, 0, 0, 0.03);
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      section.card {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      }
+
+      code, pre {
+        background-color: #1f1f1f;
+      }
+
+      blockquote {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-left-color: #f5871f;
+      }
+    }
+
+    .meta {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: #666;
+    }
+
+    .meta strong {
+      color: var(--text-light);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .meta strong {
+        color: var(--text-dark);
+      }
+    }
+
+  </style>
+</head>
+<body>
+<main>
+  <h1>📦 Minor Update — Version 1.1.0</h1>
+  <p class="meta">
+    <strong>Release Date:</strong> May 20, 2025<br>
+    <strong>Type:</strong> Minor Update<br>
+    <strong>Status:</strong> ✅ Deployed
+  </p>
+
+  <hr>
+
+  <section class="card">
+    <h2>🛠 Purpose of the Update</h2>
+    <p>This update primarily focuses on improving the internal structure of the project to make it more maintainable, scalable, and aligned with software development best practices.</p>
+  </section>
+
+  <section class="card">
+    <h2>✅ Key Changes</h2>
+
+    <h3>1. 🔧 Code Refactoring According to SOLID Principles</h3>
+    <p>The five SOLID principles have been applied to enhance code quality:</p>
+    <ul>
+      <li><strong>S:</strong> Each class/module has a single responsibility.</li>
+      <li><strong>O:</strong> Open for extension, closed for modification.</li>
+      <li><strong>L:</strong> Subtypes can replace base types.</li>
+      <li><strong>I:</strong> Interfaces are split for specificity.</li>
+      <li><strong>D:</strong> Dependency injection introduced.</li>
+    </ul>
+    <p><strong>Impact:</strong></p>
+    <ul>
+      <li>Reorganization of files and modules</li>
+      <li>Improved readability, testability, and maintainability</li>
+      <li>Better separation of concerns</li>
+    </ul>
+
+    <h3>2. 📚 Official Documentation Published</h3>
+    <p>A structured and accessible documentation is now available:</p>
+    <p>🔗 <strong><a href="https://tina-1300.github.io/documentation/WinSpeak/index.html">View Documentation</a></strong></p>
+    <ul>
+      <li>Project overview</li>
+      <li>Installation & configuration guide</li>
+      <li>Code examples</li>
+      <li>Contribution best practices</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>📌 Notes</h2>
+    <ul>
+      <li>No major behavioral changes introduced.</li>
+      <li>No breaking changes or public API modifications.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>🔄 Next Steps</h2>
+    <ul>
+      <li>Add more unit tests to cover the refactored structure.</li>
+      <li>Continuously update the documentation with future releases.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>✉️ Contact</h2>
+    <p>For any feedback or questions regarding this update, please open an issue on the <a href="https://github.com/Tina-1300/WinSpeak">GitHub repository</a> or contact the project team directly.</p>
+  </section>
+
+  <blockquote><em>Thank you for your trust and contribution to the project!</em></blockquote>
+</main>
+</body>
+</html>
