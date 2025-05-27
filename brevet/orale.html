@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compte à rebours - Orale</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {},
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+<header class="bg-gray-800 shadow-md">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Menu principal">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <a href="#" class="text-2xl font-bold text-indigo-400" aria-label="Accueil de MonSite">Epreuves</a>
+      </div>
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="index.html" class="hover:text-indigo-400 transition">Accueil</a>
+        <div class="relative" id="desktop-menu-services">
+          <button id="desktop-services-btn" aria-haspopup="true" aria-expanded="false" class="flex items-center space-x-1 hover:text-indigo-400 transition focus:outline-none">
+            <span>Epreuves</span>
+            <svg class="w-4 h-4 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </button>
+          <ul id="desktop-submenu" class="absolute left-0 mt-2 w-40 bg-gray-800 rounded-md shadow-lg opacity-0 invisible transition-opacity duration-300 z-10" role="menu" aria-label="Sous-menu Services">
+            <li><a href="orale.html" role="menuitem" class="block px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">Orale</a></li>
+            <li><a href="brevet.html" role="menuitem" class="block px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">Brevet</a></li>
+          </ul>
+        </div>
+        <!--<a href="#" class="hover:text-indigo-400 transition">À propos</a>
+        <a href="#" class="hover:text-indigo-400 transition">Contact</a>-->
+      </div>
+
+      <!-- Bouton mobile -->
+      <div class="md:hidden">
+        <button id="menu-btn" aria-label="Ouvrir le menu mobile" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-300 hover:text-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 rounded">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile caché par défaut -->
+    <div id="mobile-menu" class="md:hidden hidden mt-2" role="menu" aria-label="Menu mobile">
+      <ul class="space-y-2 px-2 pb-3">
+        <li><a href="index.html" role="menuitem" class="block px-3 py-2 rounded-md hover:bg-indigo-600 hover:text-white">Accueil</a></li>
+        <li>
+          <button aria-haspopup="true" aria-expanded="false" aria-controls="mobile-submenu" class="w-full flex justify-between items-center px-3 py-2 rounded-md hover:bg-indigo-600 hover:text-white focus:outline-none" id="mobile-submenu-btn">
+            Epreuves
+            <svg class="w-4 h-4 transform transition-transform" id="submenu-arrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </button>
+          <ul id="mobile-submenu" class="hidden mt-1 pl-4 space-y-1" role="menu" aria-label="Sous-menu Epreuves">
+            <li><a href="orale.html" role="menuitem" class="block px-3 py-2 rounded-md hover:bg-indigo-500 hover:text-white">Orale</a></li>
+            <li><a href="brevet.html" role="menuitem" class="block px-3 py-2 rounded-md hover:bg-indigo-500 hover:text-white">Brevet</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="mt-10" role="main">
+  <section class="content max-w-4xl mx-auto px-4" aria-label="Compte à rebours">
+    <div class="countdown bg-gray-800 rounded-lg p-8 shadow-lg">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        <div id="days" class="count-box bg-gray-700 rounded-md py-4" aria-live="polite" aria-atomic="true" aria-relevant="text">
+          <span class="text-5xl font-bold">00</span>
+          <div class="small text-gray-400 mt-1">jours</div>
+        </div>
+        <div id="hours" class="count-box bg-gray-700 rounded-md py-4" aria-live="polite" aria-atomic="true" aria-relevant="text">
+          <span class="text-5xl font-bold">00</span>
+          <div class="small text-gray-400 mt-1">heures</div>
+        </div>
+        <div id="minutes" class="count-box bg-gray-700 rounded-md py-4" aria-live="polite" aria-atomic="true" aria-relevant="text">
+          <span class="text-5xl font-bold">00</span>
+          <div class="small text-gray-400 mt-1">minutes</div>
+        </div>
+        <div id="seconds" class="count-box bg-gray-700 rounded-md py-4" aria-live="polite" aria-atomic="true" aria-relevant="text">
+          <span class="text-5xl font-bold">00</span>
+          <div class="small text-gray-400 mt-1">secondes</div>
+        </div>
+      </div>
+    </div>
+    <div class="message-final mt-6 max-w-md mx-auto px-4 py-3 border border-yellow-600 bg-yellow-800 text-yellow-300 rounded-md text-center font-semibold shadow-md" id="messageFinal" style="display: none;">
+      ⚠️ Bonne chance pour les épreuves orales !!! signé Tina
+    </div>
+  </section>
+</main>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+    menuBtn.setAttribute('aria-expanded', !expanded);
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  const mobileSubmenuBtn = document.getElementById('mobile-submenu-btn');
+  const mobileSubmenu = document.getElementById('mobile-submenu');
+  const submenuArrow = document.getElementById('submenu-arrow');
+
+  mobileSubmenuBtn.addEventListener('click', () => {
+    const isHidden = mobileSubmenu.classList.contains('hidden');
+    mobileSubmenuBtn.setAttribute('aria-expanded', isHidden);
+    if (isHidden){
+      mobileSubmenu.classList.remove('hidden');
+      submenuArrow.classList.add('rotate-180');
+    } else {
+      mobileSubmenu.classList.add('hidden');
+      submenuArrow.classList.remove('rotate-180');
+    }
+  });
+
+  const desktopServicesBtn = document.getElementById('desktop-services-btn');
+  const desktopSubmenu = document.getElementById('desktop-submenu');
+
+  desktopServicesBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isVisible = !desktopSubmenu.classList.contains('invisible');
+    desktopServicesBtn.setAttribute('aria-expanded', isVisible);
+    if (isVisible) {
+      desktopSubmenu.classList.add('opacity-0', 'invisible');
+      desktopSubmenu.classList.remove('opacity-100', 'visible');
+    } else {
+      desktopSubmenu.classList.remove('opacity-0', 'invisible');
+      desktopSubmenu.classList.add('opacity-100', 'visible');
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    const isClickInside = desktopServicesBtn.contains(event.target) || desktopSubmenu.contains(event.target);
+    if (!isClickInside){
+      desktopSubmenu.classList.add('opacity-0', 'invisible');
+      desktopSubmenu.classList.remove('opacity-100', 'visible');
+      desktopServicesBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+
+<script src="orale.js"></script>
+</body>
+</html>
