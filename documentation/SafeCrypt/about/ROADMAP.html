@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Tina" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Roadmap - SafeCrypt</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Roadmap";
+        var mkdocs_page_input_path = "about\\ROADMAP.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/php.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> SafeCrypt
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/rsa.html">RSA</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/aes-gcm.html">AES-GCM</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api/ChaCha20-Poly1305.html">ChaCha20-Poly1305</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Example</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../example/rsa.html">RSA</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../example/aes-gcm.html">AES-GCM</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../example/ChaCha20-Poly1305.html">ChaCha20-Poly1305</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contribute</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="license.html">Licence</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="CHANGELOG.html">Changelog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="SECURITY.html">Security</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of conduct</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Roadmap</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#release-version-v100">✅ Release version: v1.0.0</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-version-v110-goal-improved-symmetric-encryption">✅ Release version: v1.1.0 (Goal: Improved symmetric encryption)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#current-version-v120-purpose-adding-rsa-asymmetric-encryption">✅ Current version: v1.2.0 – (Purpose: Adding RSA Asymmetric Encryption)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#current-version-v130-addition-of-new-symmetric-protocols">✅ Current version: v1.3.0 – Addition of new symmetric protocols</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-v140-added-new-symmetric-protocols">🚧 Version v1.4.0 – Added new symmetric protocols</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-v150-advanced-asymmetric-protocol-and-signatures">🚧 Version v1.5.0 – Advanced Asymmetric Protocol and Signatures</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contribute">📌 Contribute</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#automated-tests-todo">🧪 Automated Tests (TODO)</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SafeCrypt</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">About</li>
+      <li class="breadcrumb-item active">Roadmap</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="safecrypt-roadmap">🛡️ SafeCrypt - Roadmap</h1>
+<p>This document describes the features planned for future versions of the SafeCrypt library.</p>
+<hr />
+<h2 id="release-version-v100">✅ Release version: <code>v1.0.0</code></h2>
+<ul>
+<li>[x] AESGCM message encryption and decryption</li>
+<li>[x] Error handling via the <code>CryptoException</code> class</li>
+</ul>
+<hr />
+<h2 id="release-version-v110-goal-improved-symmetric-encryption">✅ Release version: <code>v1.1.0</code> (Goal: Improved symmetric encryption)</h2>
+<ul>
+<li>[x] Added the <code>decryptCombined</code> method to the AESGCM class</li>
+</ul>
+<hr />
+<h2 id="current-version-v120-purpose-adding-rsa-asymmetric-encryption">✅ Current version: <code>v1.2.0</code> – (Purpose: Adding RSA Asymmetric Encryption)</h2>
+<ul>
+<li>[x] RSA Encryption (Public/Private Key)</li>
+<li>[x] RSA Key Generation (RSAKey)</li>
+<li>[x] RSA Key Saving/Loading (RSASave/RSALoad)</li>
+<li>[x] RSA Message Encryption &amp; Decryption</li>
+</ul>
+<hr />
+<h2 id="current-version-v130-addition-of-new-symmetric-protocols">✅ Current version: <code>v1.3.0</code> – Addition of new symmetric protocols</h2>
+<ul>
+<li>[X] ChaCha20-Poly1305 encryption</li>
+<li>[X] ChaCha20 + Poly1305 MAC implementation</li>
+<li>[X] Documentation<blockquote>
+<p>Fast and secure alternative to AES-GCM, ideal for mobile devices</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h2 id="version-v140-added-new-symmetric-protocols">🚧 Version <code>v1.4.0</code> – Added new symmetric protocols</h2>
+<ul>
+<li>[ ] AES encryption</li>
+<li>[ ] ECB implementation</li>
+<li>[ ] CBC implementation</li>
+<li>[ ] CTR implementation</li>
+</ul>
+<hr />
+<h2 id="version-v150-advanced-asymmetric-protocol-and-signatures">🚧 Version <code>v1.5.0</code> – Advanced Asymmetric Protocol and Signatures</h2>
+<ul>
+<li>[ ] Elliptic Curve Cryptography (ECC)</li>
+<li>[ ] Support for common curves (secp256r1, secp256k1, ed25519)</li>
+<li>
+<p>[ ] Key generation, lightweight encryption, digital signatures</p>
+</li>
+<li>
+<p>[ ] ECDSA (Elliptic Curve Digital Signature Algorithm)</p>
+</li>
+<li>
+<p>[ ] Signature and verification with elliptic curves</p>
+</li>
+<li>
+<p>[ ] EdDSA (Ed25519)</p>
+</li>
+<li>[ ] Modern, fast, secure, and compact signature</li>
+</ul>
+<hr />
+<h2 id="contribute">📌 Contribute</h2>
+<p>Want to help?
+1. Choose a <code>🚧</code> task from the roadmap.
+2. Create a dedicated branch on GitHub with a clear name that matches your task (e.g., <code>feature/chacha20-poly1305</code>, <code>bugfix/aes-gcm-decrypt</code>).
+3. Implement your feature or fix.
+4. Open a Pull Request (PR) from your branch to <code>dev</code> for review.</p>
+<p>Thanks for your contribution! 🚀</p>
+<hr />
+<h2 id="automated-tests-todo">🧪 Automated Tests (TODO)</h2>
+<ul>
+<li>[X] Add PHPUnit tests for all protocols</li>
+<li>[X] Add RSA tests</li>
+<li>[X] Add AES-GCM tests</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="CODE_OF_CONDUCT.html" class="btn btn-neutral float-left" title="Code of conduct"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="FAQ.html" class="btn btn-neutral float-right" title="FAQ">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="CODE_OF_CONDUCT.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="FAQ.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
