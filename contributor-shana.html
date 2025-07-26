@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shana Library Contributors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a2e; 
+            color: #e0e0e0; 
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #16213e; 
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); 
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #e94560; 
+            margin-bottom: 30px;
+            font-size: 2.8em;
+            font-weight: 700;
+        }
+
+        .contributor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contributor-card {
+            background-color: #0f3460; 
+            border: 1px solid #0a203c;
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contributor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3); 
+        }
+
+        .contributor-card .avatar-link {
+            display: block;
+            line-height: 0;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .contributor-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: none; 
+            transition: transform 0.2s ease;
+        }
+
+        .contributor-card .avatar-link:hover img {
+            transform: scale(1.05);
+        }
+
+        .contributor-card h2 {
+            margin: 0 0 8px 0;
+            color: #ffffff; 
+            font-size: 1.6em;
+            font-weight: 600;
+        }
+
+        .contributor-card p {
+            color: #cccccc; 
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .role {
+            font-style: italic;
+            color: #b0b0b0; 
+            margin-bottom: 10px;
+        }
+
+       
+        .contributor-github-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 10px; 
+            color: #71b9f7; 
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .contributor-github-link:hover {
+            color: #a4d3ff; 
+            text-decoration: underline;
+        }
+
+        .contributor-github-link img {
+            width: 16px; 
+            height: 16px;
+            
+            border: none;
+            box-shadow: none; 
+            vertical-align: middle; 
+            margin-bottom: 0; 
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 0.9em;
+            color: #888888; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Glorious Contributors!</h1>
+        <p>A huge thank you to everyone who has contributed and continues to make the Shana Library an exceptional project. Your passion and dedication are the driving force behind this initiative.</p>
+
+        <div id="contributors-list" class="contributor-grid">
+            </div>
+
+        <footer>
+            <p>&copy; 2025 Shana Library. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        
+        const contributors = [
+            {
+                name: "Tina-1300",
+                role: "Main Author and Lead Developer",
+                description: "The visionary behind Shana. Tina-1300 initiated this project to bring an STL to the C world.",
+                github: "https://github.com/Tina-1300",
+                avatar: "https://avatars.githubusercontent.com/u/134970121?v=4"
+            },
+            /*
+            {
+                name: "Jean Dupont",
+                role: "Développeur Pile & Tests",
+                description: "Expert en structures de données, Jean a grandement contribué à l'implémentation robuste de la pile et à la couverture des tests.",
+                github: "https://github.com/JeanDupont",
+                avatar: "https://avatars.githubusercontent.com/u/9919?v=4"
+            },
+            {
+                name: "Marie Curie",
+                role: "Spécialiste Vecteur",
+                description: "Marie a apporté son expertise pour optimiser les performances de la structure de vecteur et améliorer son API.",
+                github: "https://github.com/MarieCurie",
+                avatar: "https://avatars.githubusercontent.com/u/10052?v=4"
+            },
+            {
+                name: "Alexandre Dumas",
+                role: "Documenteur & Relecteur",
+                description: "Alexandre s'assure que notre documentation est claire, précise et agréable à lire pour tous les utilisateurs.",
+                github: "https://github.com/AlexandreDumas",
+                avatar: "https://avatars.githubusercontent.com/u/10001?v=4"
+            }
+            */
+        ];
+
+        const contributorsList = document.getElementById('contributors-list');
+
+        contributors.forEach(contributor => {
+            const card = document.createElement('div');
+            card.className = 'contributor-card';
+
+            const avatarLink = document.createElement('a');
+            avatarLink.href = contributor.github;
+            avatarLink.target = "_blank";
+            avatarLink.rel = "noopener noreferrer";
+            avatarLink.className = 'avatar-link';
+
+            const avatar = document.createElement('img');
+            avatar.src = contributor.avatar || 'https://via.placeholder.com/100';
+            avatar.alt = `Photo de ${contributor.name}`;
+            
+            avatarLink.appendChild(avatar);
+            card.appendChild(avatarLink);
+
+            const name = document.createElement('h2');
+            name.textContent = contributor.name;
+            card.appendChild(name);
+
+            const role = document.createElement('p');
+            role.className = 'role';
+            role.textContent = contributor.role;
+            card.appendChild(role);
+
+            const description = document.createElement('p');
+            description.textContent = contributor.description;
+            card.appendChild(description);
+
+            
+            if (contributor.github) { 
+                const githubTextLink = document.createElement('a');
+                githubTextLink.href = contributor.github;
+                githubTextLink.target = "_blank";
+                githubTextLink.rel = "noopener noreferrer";
+                githubTextLink.className = 'contributor-github-link';
+
+                const githubIcon = document.createElement('img');
+                githubIcon.src = 'https://github.githubassets.com/favicons/favicon.png'; 
+                githubIcon.alt = 'GitHub';
+                githubTextLink.appendChild(githubIcon);
+                
+                githubTextLink.appendChild(document.createTextNode('GitHub')); 
+
+                card.appendChild(githubTextLink);
+            }
+            
+
+            contributorsList.appendChild(card);
+        });
+    </script>
+</body>
+</html>

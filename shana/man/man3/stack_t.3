@@ -1,0 +1,37 @@
+.TH "stack_t" 3 "Version 0.1.0" "shana" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+stack_t
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <stack\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.RI "Pointer to the raw memory block allocated for the stack elements\&. "
+.ti -1c
+.RI "size_t \fBsize\fP"
+.br
+.RI "Current number of elements stored in the stack\&. "
+.ti -1c
+.RI "size_t \fBcapacity\fP"
+.br
+.RI "Maximum capacity of the stack\&. "
+.ti -1c
+.RI "size_t \fBelement_size\fP"
+.br
+.RI "size of an element (e\&.g\&., int, struct, etc\&.)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBstack_t\fP structure is designed to represent a generic stack in C\&. This means it can store elements of any type (integers, floats, other structures, etc\&.) without being specifically tied to a single type\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for shana from the source code\&.
