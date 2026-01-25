@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Règlement de la Communauté</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --text: #c9d1d9;
+            --text-light: #8b949e;
+            --accent: #58a6ff;
+            --accent-dark: #388bfd;
+            --border: #30363d;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem 1rem 4rem;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem 3.5rem;
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, #58a6ff, #a371f7 60%, #f778ba);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.6rem;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 540px;
+            margin: 1rem auto 0;
+        }
+
+        main {
+            display: grid;
+            gap: 1.6rem;
+        }
+
+        .rule-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.8rem 2rem;
+            transition: all 0.18s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rule-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        .rule-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.07) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .rule-card:hover::before {
+            opacity: 1;
+        }
+
+        .rule-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .rule-card h2 {
+            font-size: 1.45rem;
+            color: white;
+            margin-bottom: 1.1rem;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 1.4rem;
+        }
+
+        li {
+            position: relative;
+            margin-bottom: 0.9rem;
+            padding-left: 1.6rem;
+            color: var(--text);
+            font-size: 1.05rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 5rem;
+            padding: 2rem 1rem;
+            color: var(--text-light);
+            font-size: 0.92rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1.5rem 0.8rem 4rem;
+            }
+
+            header {
+                padding: 3.5rem 1rem 2.8rem;
+            }
+
+            .rule-card {
+                padding: 1.5rem 1.4rem;
+            }
+
+            .rule-card h2 {
+                font-size: 1.3rem;
+            }
+
+            li {
+                font-size: 1.02rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Règlement Officiel</h1>
+            <div class="subtitle">Règles applicables à tous les membres</div>
+        </header>
+
+        <main>
+
+            <div class="rule-card">
+                <div class="rule-number">1</div>
+                <h2>Tolérance Zéro</h2>
+                <ul>
+                    <li>Toutes formes de Harcèlement est formellement interdite sous peine de problème avec la justice
+                    </li>
+                    <li>Les attaques personnelles, moqueries ou incitations à la haine sont strictement interdites.</li>
+                    <li>Interdiction de parler de mort ou de partager des vidéos choquantes, même si elles sont fausses.
+                        Certaines personnes peuvent être sensibles à ce genre de contenu.</li>
+                    <li>Tout contenu pédocriminel est formellement interdit.</li>
+                    <li>Le respect mutuel est une obligation, non une option.</li>
+                </ul>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-number">2</div>
+                <h2>Sécurité & Données personnelles</h2>
+                <ul>
+                    <li>La diffusion d'informations personnelles (adresse, email, numéro de téléphone, ect...) est
+                        strictement interdite.</li>
+                    <li>Tout partage de contenu malveillant, phishing ou lien suspect sera sévèrement sanctionné.</li>
+                    <li>La vie privée de chacun doit être protégée.</li>
+                </ul>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-number">3</div>
+                <h2>Contenu et Publications</h2>
+                <ul>
+                    <li>Les messages à caractère violent (qui ne sont pas des blagues) ou illégal sont formellement
+                        interdits.</li>
+                    <li>Les discussions doivent rester dans le cadre défini par la communauté.</li>
+                    <li>La publicité, même indirecte, est bannie sauf autorisation écrite des administrateurs.</li>
+                </ul>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-number">4</div>
+                <h2>Liberté d'expression & limites</h2>
+                <ul>
+                    <li>Le spam est autorisé si vous discutez avec quelqu'un, mais évitez d'en abuser quand personne ne
+                        parle</li>
+                    <li>Vous pouvez parler de tout, même faire des blagues limites (racistes, etc.), tant que c'est
+                        clairement pour rire et que ça reste dans l'humour.</li>
+                    <li>Vous pouvez parler de code, pas de souci, mais évitez de balancer des idées de projets bizarres
+                        ou sensibles</li>
+                </ul>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-number">5</div>
+                <h2>Rotation des coéquipiers</h2>
+                <ul>
+                    <li>Les coéquipiers changent toutes les 2 semaines.</li>
+                    <li>Le changement s'effectue selon l'ordre des votes de la communauté : on commence par celui qui a
+                        obtenu le plus de voix, puis on continue jusqu'au dernier.</li>
+                    <li>Ce système permet à chacun d'avoir une chance équitable d'être choisi en priorité.</li>
+                </ul>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-number">6</div>
+                <h2>Application & Modération</h2>
+                <ul>
+                    <li>Les modérateurs et administrateurs ont toute autorité pour interpréter et appliquer les règles.
+                    </li>
+                    <li>les dessisions prises peuvent être voté sous grosse demande de la communauté</li>
+                    <li>En rejoignant la communauté, vous acceptez l'ensemble du règlement sans condition.</li>
+                </ul>
+            </div>
+
+        </main>
+
+        <footer>
+            © 2025 - Règlement susceptible d'évoluer • Dernière mise à jour : 25/01/2026
+        </footer>
+
+    </div>
+</body>
+
+</html>
