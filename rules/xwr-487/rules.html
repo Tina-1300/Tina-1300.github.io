@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Règlement Officiel du Groupe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#111827;
+    --secondary:#1f2937;
+    --accent:#2563eb;
+    --success:#10b981;
+    --danger:#ef4444;
+    --warning:#f59e0b;
+    --light:#f8fafc;
+    --border:#e5e7eb;
+    --text:#374151;
+    --shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--light);
+    color:var(--text);
+    line-height:1.7;
+}
+
+header{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:clamp(2.5rem,6vw,5rem);
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.hero p{
+    font-size:1.2rem;
+    opacity:.9;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.nav-container{
+    max-width:1300px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    padding:15px;
+}
+
+.nav-container a{
+    text-decoration:none;
+    color:var(--secondary);
+    font-weight:600;
+}
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#6b7280;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:var(--primary);
+}
+
+.card ul{
+    padding-left:20px;
+}
+
+.card li{
+    margin-bottom:10px;
+}
+
+.allowed{
+    border-top:5px solid var(--success);
+}
+
+.forbidden{
+    border-top:5px solid var(--danger);
+}
+
+.sanction{
+    border-top:5px solid var(--warning);
+}
+
+.timeline{
+    display:grid;
+    gap:25px;
+}
+
+.step{
+    background:white;
+    padding:25px;
+    border-left:5px solid var(--accent);
+    border-radius:15px;
+    box-shadow:var(--shadow);
+}
+
+.step h4{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.highlight{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:white;
+    border-radius:25px;
+    padding:60px 30px;
+    text-align:center;
+}
+
+.highlight h2{
+    margin-bottom:15px;
+}
+
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.footer-text{
+    opacity:.8;
+}
+
+.scroll-top{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:var(--accent);
+    color:white;
+    cursor:pointer;
+    font-size:22px;
+    display:none;
+    box-shadow:var(--shadow);
+}
+
+@media(max-width:768px){
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .section-title h2{
+        font-size:2rem;
+    }
+
+    .card{
+        padding:25px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="hero">
+        <h1>RÈGLEMENT OFFICIEL DU GROUPE</h1>
+        <p>
+            Ce règlement a pour objectif de garantir un environnement respectueux,
+            sécurisé et agréable pour tous les membres du groupe.
+            Chaque membre est tenu de le lire et de le respecter.
+        </p>
+
+        <a href="#reglement" class="btn">
+            Consulter le règlement
+        </a>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-container">
+        <a href="#reglement">Règlement</a>
+        <a href="#autorise">Autorisé</a>
+        <a href="#interdit">Interdit</a>
+        <a href="#sanctions">Sanctions</a>
+        <a href="#engagement">Engagement</a>
+    </div>
+</nav>
+
+<section id="reglement">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Règles Générales</h2>
+            <p>Les bases du bon fonctionnement du groupe.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🤝 Respect</h3>
+                <p>
+                    Chaque membre doit faire preuve de respect envers les autres.
+                    Les insultes, provocations et comportements toxiques sont interdits.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>💬 Communication</h3>
+                <p>
+                    Les échanges doivent rester constructifs, courtois et en rapport
+                    avec l'activité du groupe.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🔒 Sécurité</h3>
+                <p>
+                    Le partage d'informations privées concernant un membre est
+                    strictement interdit sans son autorisation.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="autorise">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Ce qui est Autorisé</h2>
+            <p>Les comportements encouragés au sein du groupe.</p>
+        </div>
+
+        <div class="card allowed">
+            <h3>✅ Activités Autorisées</h3>
+
+            <ul>
+                <li>Respecter les membres et le staff.</li>
+                <li>Partager des informations utiles.</li>
+                <li>Poser des questions et demander de l'aide.</li>
+                <li>Participer aux discussions de manière constructive.</li>
+                <li>Signaler les comportements inappropriés.</li>
+                <li>Proposer des améliorations pour le groupe.</li>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="interdit">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Ce qui est Strictement Interdit</h2>
+            <p>Toute infraction peut entraîner des sanctions.</p>
+        </div>
+
+        <div class="card forbidden">
+            <h3>❌ Activités Interdites</h3>
+
+            <ul>
+                <li>Insultes, harcèlement ou menaces.</li>
+                <li>Spam ou publicité non autorisée.</li>
+                <li>Diffusion de fausses informations.</li>
+                <li>Partage de contenu choquant ou illégal.</li>
+                <li>Usurpation d'identité.</li>
+                <li>Non-respect des décisions du staff.</li>
+                <li>Création de conflits volontaires.</li>
+                <li>Ajouté des membres dans le groupe sans l'accord du staff.</li>
+                <li>Volé les project d'entreprises d'une personnes.</li>
+                <li>Leak les projects sur internet.</li>
+                <li>Suprimmer des projects qui ne vous appartienne pas ou encore modifier un project sans l'accord du propriétaire.</li>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="sanctions">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Échelle des Sanctions</h2>
+            <p>Les sanctions sont appliquées selon la gravité des faits.</p>
+        </div>
+
+        <div class="timeline">
+
+            <div class="step">
+                <h4>1️⃣ Avertissement</h4>
+                <p>
+                    Premier rappel au règlement pour une infraction mineure.
+                </p>
+            </div>
+
+            <div class="step">
+                <h4>2️⃣ Sanction Temporaire</h4>
+                <p>
+                    Restriction temporaire des privilèges ou exclusion limitée.
+                </p>
+            </div>
+
+            <div class="step">
+                <h4>3️⃣ Exclusion Longue Durée</h4>
+                <p>
+                    Appliquée en cas de récidive ou de comportement grave.
+                </p>
+            </div>
+
+            <div class="step">
+                <h4>4️⃣ Bannissement Définitif</h4>
+                <p>
+                    Pour les infractions majeures ou les comportements mettant
+                    en danger la communauté.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="engagement">
+    <div class="container">
+
+        <div class="highlight">
+            <h2>Engagement des Membres</h2>
+
+            <p>
+                En rejoignant ce groupe, chaque membre reconnaît avoir pris
+                connaissance du règlement et accepte de le respecter dans son intégralité.
+            </p>
+
+            <br>
+
+            <h3>Le respect du règlement garantit une communauté saine, professionnelle et agréable pour tous.</h3>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <h3>Règlement Officiel du Groupe</h3>
+    <p class="footer-text">
+        © 2026 - Tous droits réservés • Dernière mise à jour automatique
+    </p>
+</footer>
+
+<button class="scroll-top" id="topBtn">
+↑
+</button>
+
+<script>
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 400){
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+});
+
+topBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+});
+
+const cards = document.querySelectorAll('.card, .step');
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.animate([
+                {opacity:0, transform:'translateY(40px)'},
+                {opacity:1, transform:'translateY(0)'}
+            ],{
+                duration:700,
+                fill:'forwards'
+            });
+        }
+    });
+},{
+    threshold:0.15
+});
+
+cards.forEach(card=>{
+    card.style.opacity = 0;
+    observer.observe(card);
+});
+
+</script>
+
+</body>
+</html>
